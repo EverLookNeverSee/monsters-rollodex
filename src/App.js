@@ -6,14 +6,23 @@ class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			monsters: [{name: "Linda"}, {name: "Frank"}, {name: "Jacky"}, {name: "Andrei"}],
+			monsters: [
+				{name: "Linda", id: "00001"},
+				{name: "Frank", id: "00002"},
+				{name: "Jacky", id: "00003"},
+				{name: "Andrei", id: "00004"},
+			],
 		};
 	}
 	render() {
 		return (
 			<div className="App">
 				{this.state.monsters.map(monster => {
-					return <h1>{monster.name}</h1>;
+					return (
+						<div key={monster.id}>
+							<h1>{monster.name}</h1>
+						</div>
+					);
 				})}
 			</div>
 		);
