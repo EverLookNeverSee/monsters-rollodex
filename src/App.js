@@ -15,6 +15,10 @@ class App extends Component {
 			.then(users => this.setState({monsters: users}));
 	}
 
+	onSearchChange = event => {
+		const searchField = event.target.value.toLowerCase();
+		this.setState({searchField});
+	};
 	render() {
 		const filteredMonsters = this.state.monsters.filter(monster =>
 			monster.name.toLowerCase().includes(this.state.searchField),
@@ -25,10 +29,7 @@ class App extends Component {
 					type="search"
 					className={"search-box"}
 					placeholder={"search monsters"}
-					onChange={event => {
-						const searchField = event.target.value.toLowerCase();
-						this.setState({searchField});
-					}}
+					onChange={onSearchChange}
 				/>
 				{filteredMonsters.map(monster => {
 					return (
