@@ -26,3 +26,4 @@ yarn-error.log*
 /.idea/modules.xml
 /.idea/monsters-rollodex.iml
 /.idea/vcs.xml
+/.idea/
